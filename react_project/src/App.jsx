@@ -36,19 +36,22 @@ function Biodata({ nama, nisn, kelas }) {
 function App() {
   const [showModal, setShowModal] = useState(false);
 
-  const siswa = [
-    { nama: "Ezzar Poseidon", nisn: "1234", kelas: "pplg" },
-    { nama: "Ezzar Poseidon", nisn: "1234", kelas: "pplg" },
-    { nama: "Ezzar Poseidon", nisn: "1234", kelas: "pplg" },
-    { nama: "Ezzar Poseidon", nisn: "1234", kelas: "pplg" },
-    { nama: "Ezzar Poseidon", nisn: "1234", kelas: "pplg" },
+  const [siswa, setSiswa] = useState([
     { nama: "Ezzar Poseidon", nisn: "1234", kelas: "pplg" },
     { nama: "Ezzar Poseidon", nisn: "1234", kelas: "pplg" },
     { nama: "Ezzar Poseidon", nisn: "1234", kelas: "pplg" },
     
-    
-    
-  ];
+  ]);
+
+
+const [form, setForm] = useState({
+  nama:"",
+  nisn:"",
+  kelas:""
+
+});
+
+
 
   return (
     <>
@@ -71,14 +74,17 @@ function App() {
         </div>
       </div>
 
+
       {showModal && (
         <div className="modal">
           <h3>Form Tambah</h3>
           <input type="text" name="nama" id="nama"
-          placeholder="Nama Murid" />
-          <input type="text" name="nisn" id="nisn"
-          placeholder="NISN" />
-          <select name="kelas" id="kelas">
+          placeholder="Nama Murid" onChange={(x)=>setForm({...form, nama: x.target.value})} />
+          <input type="text" name="nisn" id="nisn" 
+          placeholder="NISN" onChange={(x)=>setForm({...form, nisn: x.target.value})}/>
+
+
+          <select name="kelas" id="kelas" onChange={(x)=>setForm({...form, kelas: x.target.value})}>
             <option value="X PPLG 1">X PPLG 1</option>
             <option value="X PPLG 1">X PPLG 2</option>
             <option value="X PPLG 1">X PPLG 3</option>
