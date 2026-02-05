@@ -39,7 +39,7 @@ function App() {
   const [siswa, setSiswa] = useState([
     { nama: "Ezzar Poseidon", nisn: "1234", kelas: "pplg" },
     { nama: "Ezzar Poseidon", nisn: "1234", kelas: "pplg" },
-    { nama: "Ezzar Poseidon", nisn: "1234", kelas: "pplg" },
+    
     
   ]);
 
